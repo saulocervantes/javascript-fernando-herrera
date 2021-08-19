@@ -1,6 +1,5 @@
 
-
-alert("Hola desde app.js");
+// alert("Hola desde app.js");
 
 // console.log(console.log("Hola Mundo"));
 
@@ -21,6 +20,6 @@ c = "Hola de nuevo"
 
 // console.table({a,b,c,d,x});
 
-var miNombre = "Fernando";
+let miNuevoNombre = "Fernando Herrera";
 
-// 13. Orden y lugar de las importaciones
+// 14. Principal problema con la inicialización de variables con Var

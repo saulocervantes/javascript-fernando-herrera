@@ -10,11 +10,13 @@ let a = 10,
 
 const saludo = c + d;
 
-// console.log("%c Mis variables", "color:blue; font-weight: bold");
-// console.log({a});
-// console.log({b});
-// console.log({c});
+console.log("%c Mis variables", "color:blue; font-weight: bold");
+console.log({a});
+console.log({b});
+console.log({c});
 
-// console.table({a,b,c,d,x});
+c = "Hola de nuevo"
 
-// 11. Introducción a la consola
+console.table({a,b,c,d,x});
+
+// 12. Depuración y breakpoints

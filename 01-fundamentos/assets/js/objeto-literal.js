@@ -31,6 +31,29 @@ console.log("Vivo:", personaje[x]);
 
 console.log("Última película:", personaje["ultima-pelicula"]);
 
+// Más detalles
+
+delete personaje.edad;
+console.log(personaje);
+
+personaje.casado = true;
+
+const entriesPares = Object.entries(personaje);
+console.log(entriesPares);
+
+console.log(personaje);
+
+Object.freeze(personaje);
+
+personaje.dinero = 100000000;
+personaje.casado = false;
+personaje.direccion.ubicación = "Cosata Rica";
+
+console.log(personaje);
+
+const propiedades = Object.getOwnPropertyNames(personaje);
+const valores = Object.values(personaje);
+console.log({propiedades, valores});
 
 
-// 24. Objetos literales
+// 25. Más detalles sobre los objetos literales

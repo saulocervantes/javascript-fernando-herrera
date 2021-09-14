@@ -33,4 +33,23 @@ if (dia === 0) {
     console.log("No es lunes, martes o domingo...");
 }
 
-// 33. If y Else
+// Sin usar If Else, o Switch, únicamente objetos
+dia = 6;
+
+const diasLetras = {
+    0: () => "domingo - " + dia,
+    1: () => "lines - " + dia,
+    2: () => "martes - " + dia,
+    3: () => "mércoles - " + dia,
+    4: () => "jueves - " + dia,
+    5: () => "viernes - " + dia,
+    6: () => "sábado - " + dia,
+}
+
+let diasLetras2 = ["domingo", "lunes", "martes", "miércoles", "jueves", "viernes", "sábado"];
+//  día de la semana
+console.log(diasLetras[dia]() || "Día no definido");
+console.log(diasLetras2[dia] || "Día no definido");
+
+
+// 34. Laboratorio - Alternativa al if else

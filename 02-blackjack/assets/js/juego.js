@@ -5,5 +5,4 @@
 
 
 
-
-// 46. Inicio de proyecto - Blackjack
+// 48. Estilo y estructura de nuestro juego

@@ -14,8 +14,8 @@ let puntosJugador = 0,
 
 // Referencias del HTML
 const btnPedir = document.querySelector("#btnPedir");
+const divCartasJugador = document.querySelector("#jugador-cartas");
 const puntosHTML = document.querySelectorAll("small");
-console.log(puntosHTML);
 
 // Esta función crea un nuevo deck
 const crearDeck = () => {
@@ -68,8 +68,21 @@ btnPedir.addEventListener("click", ()=>{
     puntosJugador += valorCarta(carta);
     puntosHTML[0].innerText = puntosJugador;
     
+    // <img class="carta" src="assets/cartas/2C.png" alt="">
+    const imgCarta = document.createElement("img");
+    imgCarta.src = `assets/cartas/${carta}.png`;
+    imgCarta.classList.add("carta");
+    divCartasJugador.append(imgCarta);
+
+    if (puntosJugador > 21) {
+        console.warn("Lo siento mucho, perdiste");
+        btnPedir.disabled = true;
+    }else if (puntosJugador === 21) {
+        console.warn("21, genial!!");
+        btnPedir.disabled = true;
+    }
 });
 
 
 
-// 54. Evento click - Pedir carta
+// 55. Crear cartas en el HTML

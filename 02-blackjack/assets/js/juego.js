@@ -1,23 +1,37 @@
 
 (() => {
     'use strict'
+
     let deck = [];
-    const tipos = ["C","D","H","S"];
-    const especiales = ["A","J","Q","K"];
+    const tipos = ["C","D","H","S"],
+          especiales = ["A","J","Q","K"];
     
-    let puntosJugador = 0,
-        puntosComputadora = 0;
-    
+    // let puntosJugador = 0,
+    //     puntosComputadora = 0;
+    const puntosJugadores = [];
+
     // Referencias del HTML
-    const btnPedir = document.querySelector("#btnPedir");
-    const btnDetener = document.querySelector("#btnDetener");
-    const btnNuevo = document.querySelector("#btnNuevo");
-    const divCartasJugador = document.querySelector("#jugador-cartas");
-    const divCartasComputadora = document.querySelector("#computadora-cartas");
-    const puntosHTML = document.querySelectorAll("small");
+    const btnPedir = document.querySelector("#btnPedir"),
+          btnDetener = document.querySelector("#btnDetener"),
+          btnNuevo = document.querySelector("#btnNuevo");
+          
+          const divCartasJugador = document.querySelector("#jugador-cartas"),
+          divCartasComputadora = document.querySelector("#computadora-cartas"),
+          puntosHTML = document.querySelectorAll("small");
     
+    // Esta funciòn inicialñiza el juego      
+    const inicializarJuego = ( numJugadores = 2 ) => {
+        deck = crearDeck();
+        for (let i = 0; i < numJugadores; i++) {
+            puntosJugadores.push(0);
+        }
+
+        console.log(puntosJugadores);
+    };
+
     // Esta función crea un nuevo deck
     const crearDeck = () => {
+        deck = [];
         for (let i = 2; i <= 10; i++) {
             for (const tipo of tipos) {
                 deck.push(`${i}${tipo}`);
@@ -30,34 +44,27 @@
             }
         }
     
-        // console.log(deck);
-        
-        deck = _.shuffle(deck);
-    
-        return deck;
+        return _.shuffle(deck);
     };
-    
-    
-    crearDeck();
-    
+
     // Esta función me permite tomar una carta
     const pedirCarta = () => {
         if(deck.length === 0){
             throw "No hay cartas en el deck";
         }
-    
-        const carta = deck.pop();
-        return carta;
+        return deck.pop();;
     };
     
-    // pedirCarta();
     const valorCarta = (carta) => {
         const valor = carta.substring(0, carta.length-1);
-        // let puntos = 0;
         
         return (isNaN(valor)) ? 
               ( valor === "A" ) ? 11 : 10
               : valor * 1;
+    };
+
+    const acumularPuntos = () => {
+
     };
     
     // turno de la computadora
@@ -130,8 +137,9 @@
         
         console.clear();
         
-        deck = [];
-        crearDeck();
+        // deck = [];
+        // crearDeck();
+        inicializarJuego();
    
         puntosComputadora = 0;
         puntosJugador = 0;
@@ -149,4 +157,4 @@
 })();
 
 
-// 62. Patrón módulo
+// 63. Optimizaciones - Primera parte

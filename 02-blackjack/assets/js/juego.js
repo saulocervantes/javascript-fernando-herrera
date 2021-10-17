@@ -140,11 +140,10 @@ const miModulo = (() => {
     });
     
     btnDetener.addEventListener("click", ()=>{
-        let puntosJugador = puntosJugadores[0];
 
         btnPedir.disabled = true;
         btnDetener.disabled = true;
-        turnoComputadora(puntosJugador);
+        turnoComputadora(puntosJugadores[0]);
    
     });
     
@@ -161,4 +160,4 @@ const miModulo = (() => {
 })();
 
 
-// 65. Optimizaciones - Tercera parte
+// 66. Detalle pendiente sobre los puntos del jugador
